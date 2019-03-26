@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itdan.dao.SearchResultMapper">
+
+    <select id="search"   parameterType="java.lang.String" resultType="java.util.Map">
+     SELECT
+	c.cust_id,
+	c.cust_name,
+	c.cust_phone,
+	s.dict_item_name AS cust_source,
+	i.dict_item_name AS cust_industry,
+	a.dict_item_name AS cust_level,
+	l.lkm_name AS cust_linkman,
+	l.lkm_phone AS cust_linkman_phone
+FROM
+	cst_customer c
+LEFT JOIN cst_basedict s ON c.cust_source = s.dict_id
+LEFT JOIN cst_basedict i ON c.cust_industry = i.dict_id
+LEFT JOIN cst_basedict a ON c.cust_level = a.dict_id
+LEFT JOIN cst_linkman l ON c.cust_id = l.lkm_cust_id
+WHERE
+		c.cust_name LIKE CONCAT('%', #{keyword}, '%')
+		OR s.dict_item_name LIKE CONCAT('%', #{keyword}, '%')
+		OR i.dict_item_name LIKE CONCAT('%', #{keyword}, '%')
+		OR l.lkm_name LIKE CONCAT('%', #{keyword}, '%')
+    </select>
+</mapper>

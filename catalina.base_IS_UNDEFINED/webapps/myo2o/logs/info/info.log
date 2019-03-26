@@ -1,0 +1,12 @@
+2019-03-26 12:07:59.347 [main] INFO  com.alibaba.druid.pool.DruidDataSource -
+				{dataSource-1} inited
+2019-03-26 12:08:00.222 [Thread-1] INFO  com.alibaba.druid.pool.DruidDataSource -
+				{dataSource-1} closed
+2019-03-26 12:09:15.997 [main] INFO  com.alibaba.druid.pool.DruidDataSource -
+				{dataSource-1} inited
+2019-03-26 12:09:16.512 [Thread-1] INFO  com.alibaba.druid.pool.DruidDataSource -
+				{dataSource-1} closed
+2019-03-26 12:10:32.697 [main] INFO  com.alibaba.druid.pool.DruidDataSource -
+				{dataSource-1} inited
+2019-03-26 12:10:33.373 [Thread-1] INFO  com.alibaba.druid.pool.DruidDataSource -
+				{dataSource-1} closed
